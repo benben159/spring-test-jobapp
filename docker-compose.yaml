@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: java123
-      POSTGRES_DB: employee
+      POSTGRES_DB: employees
 
   app:
     image: benben159/spring-demo2
@@ -16,5 +16,3 @@ services:
       - 8080:8080
     volumes:
       - ./app-docker.properties:/app-docker.properties
-    environment:
-      - SPRING_CONFIG_LOCATION=/app-docker.properties

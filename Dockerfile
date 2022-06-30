@@ -6,5 +6,5 @@ RUN mvn package -Dmaven.test.skip
 FROM openjdk:11-jre-slim
 ARG JAR_FILE=/root/app/target/*.jar
 COPY --from=builder ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar", "--spring.config.location=file:///app-docker.properties"]
 
