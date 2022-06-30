@@ -1,0 +1,20 @@
+version: '3.6'
+
+services:
+
+  db:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: java123
+      POSTGRES_DB: employee
+
+  app:
+    image: benben159/spring-demo2
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./app-docker.properties:/app-docker.properties
+    environment:
+      - SPRING_CONFIG_LOCATION=/app-docker.properties
