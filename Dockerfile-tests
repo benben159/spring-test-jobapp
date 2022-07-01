@@ -1,0 +1,8 @@
+FROM python:3.6-alpine
+RUN adduser test -h /test -D -G nogroup
+USER test
+WORKDIR /test
+RUN pip install requests
+COPY test.py /test/test.py
+COPY test-wrapper.sh /test/entrypoint.sh
+CMD ["./entrypoint.sh"]

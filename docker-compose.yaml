@@ -18,3 +18,9 @@ services:
       - 8080:8080
     volumes:
       - ./app-docker.properties:/app-docker.properties:ro
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile-test
+    image: benben159/spring-demo2-test
