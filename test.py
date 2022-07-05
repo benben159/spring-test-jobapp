@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import requests
-import json
 
 data1 = {"firstName":"Benediktus", "lastName":"Anindito", "emailId":"bennybroz105@gmail.com"}
 data2 = {"firstName":"Maria", "lastName":"Elfrida", "emailId":"elfridamaria@gmail.com"}
